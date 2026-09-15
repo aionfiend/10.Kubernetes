@@ -66,4 +66,48 @@ minikube
 type: Control Plane
 host: Running
 kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+```
+6. minikube kubectl -- get nodes
+```
+kubectl.sha256:  64 B / 64 B [-------------------------] 100.00% ? p/s 0s
+kubectl:  60.26 MiB / 60.26 MiB [--------------] 100.00% 3.67 MiB p/s 17s
+NAME       STATUS   ROLES           AGE     VERSION
+minikube   Ready    control-plane   4m35s   v1.37.0
+```
+7. minikube dashboard
+```
+🔌  Enabling dashboard ...
+    ▪ Using image docker.io/kubernetesui/dashboard:v2.7.0
+    ▪ Using image docker.io/kubernetesui/metrics-scraper:v1.0.8
+💡  Some dashboard features require the metrics-server addon. To enable all features please run:
+
+        minikube addons enable metrics-server
+
+🤔  Verifying dashboard health ...
+🚀  Launching proxy ...
+🤔  Verifying proxy health ...
+🎉  Opening http://127.0.0.1:62176/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
+
+q
+^C
+user@users-MacBook-Pro$ minikube update-context
+🙄  No changes required for the "minikube" context
+💗  Current context is "minikube"
+user@users-MacBook-Pro$ kubectl cluster-info
+Kubernetes control plane is running at https://127.0.0.1:32771
+CoreDNS is running at https://127.0.0.1:32771/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+```
+8.  kubectl get pods -n kube-system
+```
+NAME                               READY   STATUS    RESTARTS   AGE
+coredns-559f6c778d-lssz6           1/1     Running   0          16m
+etcd-minikube                      1/1     Running   0          16m
+kindnet-6bv7l                      1/1     Running   0          16m
+kube-apiserver-minikube            1/1     Running   0          16m
+kube-controller-manager-minikube   1/1     Running   0          16m
+kube-proxy-s98hh                   1/1     Running   0          16m
+kube-scheduler-minikube            1/1     Running   0          16m
+storage-provisioner                1/1     Running   0          16m
 ```
