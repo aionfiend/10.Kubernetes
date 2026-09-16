@@ -19,9 +19,8 @@ jobs:
       # Шаг 2: Установка и настройка кластера KinD
       # Этот action автоматически устанавливает KinD, разворачивает кластер и настраивает kubectl
       - name: Create KinD Cluster
-        uses: engineerd/setup-kind@v0.6.0
-        with:
-          version: "v0.20.0"
+        run: |
+          kind create cluster --image kindest/node:v1.31.0 --wait 5m
 
       # Шаг 3: Проверка работоспособности кластера
       - name: Test cluster connection
