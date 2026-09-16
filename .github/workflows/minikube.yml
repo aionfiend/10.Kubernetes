@@ -1,4 +1,4 @@
-name: Minikube CI
+name: Minikube
 
 # Настройка триггера для запуска при создании или обновлении Pull Request
 on:
