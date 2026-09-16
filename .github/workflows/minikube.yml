@@ -30,4 +30,5 @@ jobs:
         run: |
           kubectl cluster-info
           kubectl get nodes
+          kubectl get pods -A
           minikube status
