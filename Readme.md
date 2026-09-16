@@ -111,3 +111,28 @@ kube-proxy-s98hh                   1/1     Running   0          16m
 kube-scheduler-minikube            1/1     Running   0          16m
 storage-provisioner                1/1     Running   0          16m
 ```
+
+# 10.3
+```
+Run kubectl cluster-info
+  kubectl cluster-info
+  kubectl get nodes
+  kubectl get pods -A
+  shell: /usr/bin/bash -e {0}
+  
+Kubernetes control plane is running at https://127.0.0.1:37825
+CoreDNS is running at https://127.0.0.1:37825/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+NAME                 STATUS   ROLES           AGE   VERSION
+kind-control-plane   Ready    control-plane   25s   v1.31.0
+NAMESPACE            NAME                                         READY   STATUS    RESTARTS   AGE
+kube-system          coredns-6f6b679f8f-vlrwn                     1/1     Running   0          16s
+kube-system          coredns-6f6b679f8f-wpxgl                     1/1     Running   0          16s
+kube-system          etcd-kind-control-plane                      1/1     Running   0          24s
+kube-system          kindnet-5hrnt                                1/1     Running   0          16s
+kube-system          kube-apiserver-kind-control-plane            1/1     Running   0          23s
+kube-system          kube-controller-manager-kind-control-plane   1/1     Running   0          23s
+kube-system          kube-proxy-qq5cv                             1/1     Running   0          16s
+kube-system          kube-scheduler-kind-control-plane            1/1     Running   0          23s
+local-path-storage   local-path-provisioner-ccc7bf7fc-jf5l7       1/1     Running   0          16s
+```
