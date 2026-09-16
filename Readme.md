@@ -136,3 +136,34 @@ kube-system          kube-proxy-qq5cv                             1/1     Runnin
 kube-system          kube-scheduler-kind-control-plane            1/1     Running   0          23s
 local-path-storage   local-path-provisioner-ccc7bf7fc-jf5l7       1/1     Running   0          16s
 ```
+
+10.4
+```
+Run kubectl cluster-info
+  kubectl cluster-info
+  kubectl get nodes
+  kubectl get pods -A
+  minikube status
+  shell: /usr/bin/bash -e {0}
+Kubernetes control plane is running at https://192.168.49.2:8443
+CoreDNS is running at https://192.168.49.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   25s   v1.37.0
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE
+kube-system   coredns-559f6c778d-xdl92           1/1     Running   0          16s
+kube-system   etcd-minikube                      1/1     Running   0          22s
+kube-system   kindnet-mb5kl                      1/1     Running   0          16s
+kube-system   kube-apiserver-minikube            1/1     Running   0          22s
+kube-system   kube-controller-manager-minikube   1/1     Running   0          22s
+kube-system   kube-proxy-vkcck                   1/1     Running   0          16s
+kube-system   kube-scheduler-minikube            1/1     Running   0          22s
+kube-system   storage-provisioner                1/1     Running   0          15s
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+```
